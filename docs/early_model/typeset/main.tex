@@ -1,0 +1,324 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb,booktabs,array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\emergencystretch=2em
+\newcommand{\BR}{\operatorname{BR}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Prb}{\mathbb{P}}
+\newcommand{\sourcepage}[1]{\textit{Original notes: #1.}}
+\title{An Exploratory Model of Anticipation\\
+\large Edited model-background edition with clarifications}
+\author{Researcher's original model-building notes\\
+\normalsize Edited with AI assistance for private mentor review}
+\date{24 October 2026}
+\begin{document}
+\maketitle
+
+\textbf{Status and purpose.} This edited model-background edition presents the
+researcher's mathematical approach from early iPad notes, with explicit
+clarifications. It is not a verbatim transcription or a final empirical protocol.
+The full eight-page-source reading is preserved in the local v3 backup; this
+review edition deliberately abbreviates the retired measurement proposal.
+
+Investors may regard familiar daily moving averages as support and anticipate
+others acting before contact. The model expresses that intuition as choices,
+beliefs, a payoff trade-off and a best-response fixed point. It is not a claim
+of theoretical novelty or an empirically identified mechanism. The principal
+empirical deliverable remains the final measured distribution of real
+successful-rebound pivots; the current mainline review note is authoritative
+for measurement. Source-page references identify where the mathematical
+arguments originated, not current implementation instructions.
+
+\section{Distance, attention and beliefs}
+\sourcepage{page 1.}
+
+Let $P_t$ denote price and $M_t>0$ a technical reference. Define
+\begin{equation}
+ x_t=\frac{P_t-M_t}{M_t}.
+\end{equation}
+Thus $x_t=0.003$ means $0.3\%$ above the reference, $x_t=0$ is on it,
+and $10{,}000x_t$ is signed distance in basis points. The draft posits
+\begin{equation}
+ A(x)>0,\qquad A'(x)<0
+\end{equation}
+on the relevant approach domain. The interpretation is greater attention nearer
+the line from above. This is an assumption, not an attention measure observed
+in the price data.
+
+Trader $i$ chooses advance-entry distance $d_i\geq0$. For $N$ traders, write
+\begin{equation}
+ d_{-i}=(d_1,\ldots,d_{i-1},d_{i+1},\ldots,d_N),\quad
+ \bar d_{-i}=\frac{1}{N-1}\sum_{j\ne i}d_j,\quad
+ \mu_i=\E_i[\bar d_{-i}].
+\end{equation}
+Here $\E_i$ reflects trader $i$'s information and beliefs. For example, with four
+traders, $\bar d_{-2}=(d_1+d_3+d_4)/3$. Summarizing the distribution of other
+traders' actions and beliefs by one mean is a substantive simplification.
+
+The proposed best-response relation and complementarity assumption are
+\begin{equation}
+ d_i=\BR(\mu_i;A),\qquad \BR_\mu>0.
+\end{equation}
+A symmetric equilibrium with identical relevant primitives and consistent beliefs
+must satisfy
+\begin{equation}\label{eq:fixedpoint}
+ d^*=\BR(d^*;A).
+\end{equation}
+A scalar fixed point is not by itself a complete heterogeneous market model.
+Complementarity requires its own assumptions; it will not follow merely from
+attention increasing near the line.
+
+\section{Entry gain, capture probability and cost}
+\sourcepage{pages 2--4.}
+
+For a single stylized decision, \emph{hold the reference $M>0$ and rebound sale
+price $p^R$ fixed}. Choosing $d$ then gives
+\begin{equation}
+ P^{\mathrm{entry}}=M(1+d),\qquad
+ G(d)=p^R-M(1+d),\qquad G'(d)=-M,\qquad G''(d)=0.
+\end{equation}
+Entering earlier at a higher price reduces the gain conditional on capture.
+If the model requires $G(d)\geq0$, its feasible domain must impose
+$d\leq p^R/M-1$, provided that bound is nonnegative. The draft's proposed
+finite upper bound on optimal entry distance needs conditions on the
+\emph{whole payoff}, not just $G'<0$.
+
+Let $q(d;\mu,A)\in[0,1]$ be a capture probability and let $C(d)$ represent
+early-entry cost or risk. The draft assumes
+\begin{equation}
+ q_d>0,\qquad C'(d)>0
+\end{equation}
+and proposes the reduced-form expected payoff
+\begin{equation}\label{eq:payoff}
+ U(d,\mu;A)=q(d;\mu,A)G(d)-C(d).
+\end{equation}
+Failed capture has no separate payoff here; such a loss would need to be
+modeled explicitly or included in $C$. These formulas are not a validated
+trading-profit model. In particular, differentiating with fixed $M$ cannot
+silently be applied to a live MA that itself changes with price.
+
+For an \emph{interior}, differentiable maximizer, holding the specified attention
+environment fixed in the notation, the first-order condition is
+\begin{align}
+ U_d&=q_dG+qG'-C'=q_dG-Mq-C'=0, \label{eq:foc}\\
+ U_{dd}&=q_{dd}G+2q_dG'+qG''-C''
+       =q_{dd}G-2Mq_d-C''. \label{eq:soc}
+\end{align}
+The first term in \eqref{eq:foc} is the marginal capture benefit; the other
+terms reflect the higher entry price and marginal cost. At an interior symmetric
+solution, evaluate this condition at $d=\mu=d^*$.
+
+\textbf{Clarification of page 4.} At a stationary point, $U_{dd}<0$ is a
+sufficient condition for a strict local maximum, not a necessary condition for
+every optimum or equilibrium. Nor does it alone establish a global or unique
+best response. With suitable regularity, an interior local maximum satisfies
+$U_d=0$ and $U_{dd}\leq0$; a zero second derivative may require higher-order
+analysis. Boundary candidates must be checked separately. Strict concavity on
+a compact feasible interval, together with continuity, is one possible stronger
+route to an attained, unique maximizer.
+
+\section{Existence, local approximation and stability}
+\sourcepage{pages 1--5.}
+
+\subsection{A fixed-point existence argument}
+Suppose a continuous, single-valued best response is a self-map
+\[
+ \BR:[0,\bar d]\longrightarrow[0,\bar d],\qquad 0<\bar d<\infty.
+\]
+For $F(d)=\BR(d)-d$, the endpoint inequalities are
+\[
+ F(0)=\BR(0)\geq0,\qquad F(\bar d)=\BR(\bar d)-\bar d\leq0.
+\]
+The intermediate value theorem gives some $d^*\in[0,\bar d]$ with
+$F(d^*)=0$. The endpoint signs need not be strict. This establishes existence,
+possibly at a boundary, \emph{given} the self-map and continuity assumptions.
+It does not establish uniqueness, a positive interior equilibrium or stability.
+The notes do not derive all these best-response properties from payoff primitives.
+
+\subsection{What strategic complementarity requires}
+Along a differentiable interior best-response branch with $U_{dd}\ne0$,
+implicit differentiation of $U_d(\BR(\mu),\mu;A)=0$ gives
+\begin{equation}
+ \BR_\mu=-\frac{U_{d\mu}}{U_{dd}},\qquad
+ U_{d\mu}=Gq_{d\mu}-Mq_\mu. \label{eq:brslope}
+\end{equation}
+The second expression uses fixed $M$, fixed $p^R$ and $C=C(d)$. If
+$U_{dd}<0$, positive complementarity requires $U_{d\mu}>0$. Neither
+$q_d>0$ nor $A'(x)<0$ alone implies this cross-effect.
+
+\subsection{Taylor approximation versus an affine specification}
+Around a reference belief $\mu_0$, differentiability gives
+\begin{align}
+ \BR(\mu)&=\BR(\mu_0)+\BR_\mu(\mu_0)(\mu-\mu_0)
+              +o(|\mu-\mu_0|)\\
+         &\approx \alpha+\beta\mu,\qquad
+ \beta=\BR_\mu(\mu_0),\quad
+ \alpha=\BR(\mu_0)-\beta\mu_0.
+\end{align}
+\textbf{Clarification of page 2.} The approximation is local. Writing it as
+an exact global equality discards the remainder and introduces an additional
+affine-model assumption. If $\BR(\mu)=\alpha+\beta\mu$ really is affine,
+then, for $\beta\ne1$,
+\begin{equation}
+ d^*=\frac{\alpha}{1-\beta},\qquad
+ \BR(\mu)-d^*=\beta(\mu-d^*).
+\end{equation}
+These equalities must also respect the feasible action interval.
+
+\subsection{A hypothetical best-response iteration}
+Consider $d_{n+1}=\BR(d_n;A)$ and perturb an interior fixed point:
+$d_n=d^*+\delta_n$. With $\beta=\BR_\mu(d^*)$,
+\begin{equation}
+ \delta_{n+1}=\beta\delta_n+o(|\delta_n|). \label{eq:local}
+\end{equation}
+If the required second-order smoothness holds, the remainder can instead be
+written as $O(\delta_n^2)$. The linearized model gives
+\[
+ \delta_n^{\mathrm{lin}}=\beta^n\delta_0.
+\]
+For a genuinely affine best response this is exact for the actual iterates.
+For a general nonlinear response it is not an exact formula for all $n$.
+
+Under standard smoothness conditions, $|\beta|<1$ is sufficient for local
+convergence; $|\beta|>1$ is locally unstable, while $|\beta|=1$ requires
+further analysis. A uniform contraction on the entire closed action interval
+is a stronger sufficient condition for a unique fixed point and convergence
+from every starting point in that interval.
+
+\textbf{Correction of page 1 and qualification of page 5.} A unique equilibrium
+does \emph{not} imply $|\BR_\mu|<1$. Existence, uniqueness and stability
+are distinct. The power formula on page 5 is exact only for the affine or
+linearized model. Moreover, the iteration index $n$ is not automatically real
+market time; these dynamics were not estimated from the price data.
+
+\section{Positive anticipation and salience}
+\sourcepage{pages 5--6.}
+
+\subsection{A condition ruling out zero as an optimum}
+At $d=\mu=0$, the draft considers
+\begin{equation}
+ U_d(0,0;A)=q_d(0,0;A)G(0)-Mq(0,0;A)-C'(0)>0.
+\end{equation}
+With feasible points immediately to the right of zero and the relevant right
+derivative, this rules out zero as a maximizing choice when $\mu=0$.
+If a global maximum is attained, any maximizing choice must then be positive.
+With the continuous-self-map existence conditions above and $\BR(0)>0$,
+a fixed point cannot equal zero; its value might still be the upper boundary.
+This is a conditional argument, not an unconditional positive interior result.
+
+For the affine benchmark, $\alpha>0$ and $0\leq\beta<1$ yield a positive
+$d^*=\alpha/(1-\beta)$ only if it lies in the action domain and the assumed
+self-map conditions are met. A positive local Taylor intercept alone does not
+establish that conclusion for an arbitrary nonlinear response.
+
+\subsection{A conditional comparative-static formula}
+Let salience enter through $A(x;s)$ and write the resulting payoff as
+$U(d,\mu;s)$. Along a differentiable interior equilibrium branch,
+\[
+ U_d(d^*(s),d^*(s);s)=0.
+\]
+Differentiation gives
+\begin{align}
+ (U_{dd}+U_{d\mu})\frac{d d^*}{ds}+U_{ds}&=0,\\
+ \frac{d d^*}{ds}
+ &= -\frac{U_{ds}}{U_{dd}+U_{d\mu}}
+  = -\frac{U_{ds}}{U_{dd}(1-\beta)},\qquad
+ \beta=-\frac{U_{d\mu}}{U_{dd}}. \label{eq:salience}
+\end{align}
+All derivatives are evaluated at the equilibrium and include the specified
+chain-rule effects of $s$. The branch must be nondegenerate:
+$U_{dd}+U_{d\mu}\ne0$. The last expression cannot be used at $\beta=1$.
+Under $U_{dd}<0$ and $\beta<1$, the direction is the sign of $U_{ds}$,
+which needs an additional substantive assumption. Greater salience does not
+unconditionally imply earlier action. No payoff derivatives in
+\eqref{eq:salience} were structurally estimated by the completed study.
+
+\section{Reaction distance and a proposed CDF bridge}
+\sourcepage{pages 6--7.}
+
+The draft introduces $D_R$ as the random distance from the reference at which
+a reaction begins. In an idealized approach from above, entry at threshold $d$
+before reversal is proposed to correspond to $D_R\leq d$. It therefore writes
+\begin{equation}
+ q(d;\mu,A)=H(d\mid\mu,A)
+          =\Prb(D_R\leq d\mid\mu,A).
+\end{equation}
+This needs an event-equivalence assumption: the path reaches the entry threshold
+before reversing precisely under the stated distance ordering, with compatible
+reference and execution assumptions. Gaps, moving references, repeated
+approaches, non-reactions and finite windows complicate the equivalence.
+How non-reactions enter the model and which population is conditioned on must
+be specified.
+
+If $H$ is appropriately smooth, let $h=\partial H/\partial d$. The payoff
+and interior first-order condition can then be written
+\begin{align}
+ U(d,\mu;A)&=H(d\mid\mu,A)G(d)-C(d),\\
+ h(d\mid\mu,A)G(d)+H(d\mid\mu,A)G'(d)-C'(d)&=0.
+\end{align}
+At a symmetric interior equilibrium, set $d=\mu=d^*$.
+A CDF is nondecreasing; a strictly positive density is an additional
+assumption, not a generic CDF property.
+
+For observed reaction distances $D_{R,1},\ldots,D_{R,m}$, the notes propose
+\begin{equation}
+ \widehat H(d)=\frac1m\sum_{j=1}^{m}\mathbf{1}\{D_{R,j}\leq d\}.
+\end{equation}
+An empirical CDF is a step function, not an ordinary smooth density.
+More fundamentally, if observations are selected because they are successful
+rebounds, this estimates a \emph{successful-event location distribution}.
+It does not identify the capture probability across all opportunities or
+the probability of rebound conditional on distance.
+
+The theoretical trader choice $d_i$, equilibrium $d^*$ and empirically measured
+pivot distance are distinct objects. A median, mode or KDE peak of the
+successful-event distribution cannot be substituted for $d^*$.
+
+\section{The early measurement proposal and its later replacement}
+\label{sec:oldmeasurement}
+\sourcepage{pages 7--8.}
+
+\subsection{Live daily reference}
+Page 7 proposes
+\begin{equation}
+ M_t^{(5)}=\frac{P_t+C_{t-1}+C_{t-2}+C_{t-3}+C_{t-4}}5,
+\end{equation}
+where $C_{t-k}$ denotes the close of the $k$th previous completed trading day,
+not the previous minute. The motivation is to approximate a currently
+observable technical reference. It is not evidence that every investor uses
+that display. A reference built only from the five previous completed daily
+closes is a different benchmark, proposed in the notes as a possible robustness
+comparison rather than substituted into this live formula.
+
+\subsection{Current measurement takes precedence}
+Page 8 proposed an earlier band-entry origin and running-low threshold detector.
+Its detailed equations are omitted from this edited background edition because
+they are not the final empirical rules. The complete historical reading remains
+in the local v3 backup. The final sample instead uses the frozen bullish-pullback
+A background, original-near origins, full EWMA, three consecutive qualifying
+closes within five minutes, and the fixed non-overlap rule. Its pivot is the last
+tied lowest close before the first qualifying three-close window. See
+\texttt{MAINLINE\_REVIEW.md} for the current definitions and empirical results.
+These are conditional observations, not estimates of the model's optimal
+choice or equilibrium distance.
+
+\section*{Source and editorial scope}
+This edited reading retains the mathematical model and clarifications from \emph{Project notes.pdf}, supplied by the researcher. The original
+source's SHA-256 is recorded in the candidate's provenance manifest.
+Corrections are identified in the text, including fixed-reference derivatives,
+interior versus boundary optima, fixed-point existence versus uniqueness and
+stability, local versus exact affine formulas, conditional comparative statics,
+and the empirical-selection gap in the CDF interpretation.
+
+No original research report, data, analysis code or frozen protocol has been
+changed. No new empirical experiment or theory-validation claim is introduced.
+The handwritten source and complete historical transcription remain local; this edited reading and its source are
+the intended review appendix. Research and GitHub publication remain stopped
+pending the owner's separate instructions.
+\end{document}

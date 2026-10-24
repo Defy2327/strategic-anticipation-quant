@@ -1,0 +1,81 @@
+{
+  "version": "v4",
+  "scope": "current final mainline evidence; historical core verifier excluded",
+  "model_edition": "edited model-background edition; full version preserved outside candidate",
+  "latex_compiler": "built-in desktop editor",
+  "latex_compile_kind": "success",
+  "latex_source_sha256": "7d064ee63abcbe2c25a169eacaf904cc7fd5fb2b401ce5634c3e259255680dbd",
+  "typeset_pdf_exported": false,
+  "frozen_data_and_figures_unchanged": true,
+  "research_restarted": false,
+  "uploaded": false,
+  "actual_current_result_check": {
+    "status": "PASS",
+    "scope": "current final mainline saved evidence only",
+    "files": 20,
+    "event_groups": [
+      {
+        "N": 5,
+        "records": 35,
+        "days": 24,
+        "eligible_nonoverlap_origins": 152,
+        "no_close_passage": 34,
+        "pivot_quantiles": [
+          0.5718,
+          1.7148,
+          3.0473,
+          6.6751,
+          9.5017
+        ]
+      },
+      {
+        "N": 10,
+        "records": 36,
+        "days": 27,
+        "eligible_nonoverlap_origins": 112,
+        "no_close_passage": 36,
+        "pivot_quantiles": [
+          0.8689,
+          1.8556,
+          3.226,
+          6.3369,
+          9.6446
+        ]
+      }
+    ],
+    "quoted_probability_gaps": [
+      {
+        "cohort": "all",
+        "strict_gap_pp": -0.4754,
+        "tolerant_gap_pp": -0.9716
+      },
+      {
+        "cohort": "pullback_A",
+        "strict_gap_pp": 4.658,
+        "tolerant_gap_pp": 4.5448
+      },
+      {
+        "cohort": "uptrend_C",
+        "strict_gap_pp": -0.8413,
+        "tolerant_gap_pp": -1.2839
+      }
+    ],
+    "table_rows": {
+      "derived_event_locations.csv": 71,
+      "location_quantiles.csv": 32,
+      "location_summary_all_N.csv": 464,
+      "probability_points.csv": 696,
+      "simultaneous_bands.csv": 4872,
+      "exposure_counts.csv": 5800
+    },
+    "native_gaps_spanning_zero_both_settings": 1392,
+    "adverse_block_sensitive_change_retained": true,
+    "local_markdown_links": 17,
+    "writes": 0,
+    "network_calls": 0,
+    "empirical_recomputation": false,
+    "limitation": "Verifies saved consistency; not source-price reconstruction, estimator correctness or an end-to-end empirical pipeline."
+  },
+  "source_excerpts": "PASS: source hashes, exact function text and syntax; no full pipeline execution",
+  "git_collection": "PASS: all 20 files including six approved CSVs collectible; unapproved data ignored; no remote action"
+}

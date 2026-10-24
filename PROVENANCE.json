@@ -1,0 +1,128 @@
+{
+  "version": "v4",
+  "copied_material": {
+    ".gitignore": {
+      "source_candidate_v3_path": ".gitignore",
+      "sha256": "b739abf274eeee651000fbc564e81994e29b1a4b7a12aed4b9bd96bd9710da77",
+      "bytes": 345,
+      "change": "Exact allowlist of six approved derived/aggregate CSVs; other data excluded",
+      "original_sha256": "d32954e48608aac270182ed9fe7309507db0193f754f042f76d3c6acaaeb69ae"
+    },
+    "data/derived_event_locations.csv": {
+      "source_candidate_v3_path": "evidence/actual_events/derived_event_locations.csv",
+      "sha256": "dbc673d397db33b06498359b1539de364f3a6b54aa3dab839d700cb7332dfb43",
+      "bytes": 5454,
+      "change": "unchanged copy"
+    },
+    "data/location_quantiles.csv": {
+      "source_candidate_v3_path": "reports/Evidence/reversal_locations/MA5_MA10_position_quantiles.csv",
+      "sha256": "21279866431adc9718e32a7b117bfb24ac09acd2378d9d682be96db139455a9b",
+      "bytes": 7871,
+      "change": "unchanged copy"
+    },
+    "data/location_summary_all_N.csv": {
+      "source_candidate_v3_path": "reports/Evidence/reversal_locations/position_summary_all_N.csv",
+      "sha256": "1dea8c6f1a2b7e68620f580fc3f9fd783ea547aa4afe07e599b631910695a804",
+      "bytes": 42396,
+      "change": "unchanged copy"
+    },
+    "data/probability_points.csv": {
+      "source_candidate_v3_path": "reports/Evidence/final_definition/all_period_points.csv",
+      "sha256": "509d0e7f219b7e993bd51cd4829cc776c8f00ece8b088f20cbc4f8b7f5c855ea",
+      "bytes": 132084,
+      "change": "unchanged copy"
+    },
+    "data/simultaneous_bands.csv": {
+      "source_candidate_v3_path": "reports/Evidence/final_definition/all_simultaneous_bands.csv",
+      "sha256": "23714b43c99ed016ccbfc49d20cdcefaf8120769117f236eb943981e647410d5",
+      "bytes": 358138,
+      "change": "unchanged copy"
+    },
+    "data/exposure_counts.csv": {
+      "source_candidate_v3_path": "reports/Evidence/final_definition/all_exposure_counts.csv",
+      "sha256": "29d9ae9bc6c8b2d9b4e02a2402afc50501b6069ec421a04921a0b4b35e8cae1d",
+      "bytes": 191730,
+      "change": "unchanged copy"
+    },
+    "figures/event_locations_bp.png": {
+      "source_candidate_v3_path": "reports/bull_side/figures/EN_Bull_Event_Locations_bp.png",
+      "sha256": "a157e1e5404f0630ad00ae6b41ecae9540b3760bef8cfcebdd9fa5cc6176171c",
+      "bytes": 207628,
+      "change": "unchanged copy"
+    },
+    "figures/final_A_probability.png": {
+      "source_candidate_v3_path": "reports/Evidence/final_definition/pullback_A_S3_origin.png",
+      "sha256": "288f35443ef5039a1cd2ab30d8f7814e5defb3b97f83e4866228eab25411dffd",
+      "bytes": 486983,
+      "change": "unchanged copy"
+    },
+    "docs/early_model/typeset/main.tex": {
+      "source_candidate_v3_path": "docs/early_model/typeset/main.tex",
+      "change": "Edited model-background edition; mathematical model retained, retired measurement section abbreviated; full original reading preserved outside candidate",
+      "sha256": "7d064ee63abcbe2c25a169eacaf904cc7fd5fb2b401ce5634c3e259255680dbd",
+      "bytes": 15502
+    },
+    "code/reference_geometry.py": {
+      "source": "D:\\strategic_anticipation_quant\\src\\strategic_anticipation\\events\\branch_a0.py",
+      "source_file_sha256": "7503c5c2e4f2b2b6e11844b1c1d231241671474e13b9242dbd5804e4a3e3487f",
+      "function_ranges": [
+        {
+          "function": "decimal_cents",
+          "start_line": 22,
+          "end_line": 30
+        },
+        {
+          "function": "exact_live_geometry",
+          "start_line": 33,
+          "end_line": 46
+        }
+      ],
+      "sha256": "b2154422edc679de6850ca6d4325c4cb45c67134c9e031e12c0e1a66e4f5d6a4",
+      "bytes": 1460,
+      "change": "Exact original function-text excerpts; import/constant retained and provenance header added; no reimplementation",
+      "scope": "Earlier shared measurement utilities for inspection, not a certified final five-minute pipeline"
+    },
+    "code/session_clock.py": {
+      "source": "D:\\strategic_anticipation_quant\\src\\strategic_anticipation\\statistics\\branch_a0_4.py",
+      "source_file_sha256": "c6a2fd81f72e411c42d2c08d1788bd04d8880e7c9860d632d458291c282572e1",
+      "function_ranges": [
+        {
+          "function": "session_minutes",
+          "start_line": 8,
+          "end_line": 20
+        },
+        {
+          "function": "clock_regions",
+          "start_line": 23,
+          "end_line": 30
+        }
+      ],
+      "sha256": "66294292a568394d66c83086b74364343808587ed942e7df3e2602f259e69bd6",
+      "bytes": 1606,
+      "change": "Exact original function-text excerpts; import/constant retained and provenance header added; no reimplementation",
+      "scope": "Earlier shared measurement utilities for inspection, not a certified final five-minute pipeline"
+    }
+  },
+  "sources_not_distributed": {
+    "reports/bull_side/03_Bull_Side_Full_Report_EN.md": {
+      "sha256": "5db08f5882f8a2fa7dd0fcf3c7e875c0a9cc791a53c6a96d1e9186e0627ee726",
+      "distributed": false,
+      "role": "frozen source for the new mainline note; historical narrative excluded"
+    },
+    "reports/Evidence/final_definition/结果简报.txt": {
+      "sha256": "5767f799eb4772e8107ce11da1625ec6c1626e25cdc98acecda22c4f5230f1a0",
+      "distributed": false,
+      "role": "frozen source for the new mainline note; historical narrative excluded"
+    },
+    "D:/OSG Quant/Project notes.pdf": {
+      "sha256": "dcc20685f111a186ee4aa7d494597cd27837bb80f888634ca571bf096b25fa49",
+      "pages": 8,
+      "distributed": false,
+      "role": "source of mathematical background; unchanged locally"
+    }
+  },
+  "original_research_root": "D:/strategic_anticipation_quant",
+  "prior_complete_candidate": "candidate_v3_backup_not_for_upload",
+  "research_restarted": false,
+  "uploaded": false
+}
