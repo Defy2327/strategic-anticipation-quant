@@ -1,10 +1,10 @@
 # Where do successful rebounds begin relative to daily moving averages?
 
-**Research portfolio for professional review — local candidate, not uploaded.**
+**Research portfolio for professional review.**
 
-Investors may regard familiar daily averages such as MA5 and MA10 as support. If they anticipate others acting early, a rebound might start before contact. The mathematical approach makes this idea discussable through choices, beliefs, payoff trade-offs and a best-response fixed point. It is a motivating hypothesis, not an identified mechanism.
+This project asks where short-term price rebounds begin relative to the 5-day and 10-day moving averages. It uses one-minute SPY closing prices from 2014 to 2025 to compare rebound locations and rates. The model explores one possible explanation. Traders who expect others to buy near a moving average may buy before the price reaches it.
 
-The empirical contribution is a precise measurement: after fixing the market background, downward approach and sustained-rebound definition, extract each successful event's actual pivot and locate it relative to its contemporaneous live daily MA.
+Among eligible observations, the **origin** is a minute whose close is below each of the previous five closes and whose five-minute decline meets a volatility-based threshold (`b0`). A **successful rebound** requires three consecutive closes within the next five minutes, each at least `b0` above the origin price. The **pivot** is the last occurrence of the lowest close in the event window before that sequence starts. We measure its distance from the moving average at that minute.
 
 Under the frozen bullish-pullback A, original-near, full-EWMA, strict origin-price and non-overlap rules, **MA5 has 35 records across 24 days; MA10 has 36 across 27 days**. Median pivot distances are **+3.05 and +3.23 bp**. Respectively, 34/35 and 36/36 successful events have no close passage during the five-minute observation window. Most observed pivots are above the line; the actual cross-line MA5 point is retained.
 
